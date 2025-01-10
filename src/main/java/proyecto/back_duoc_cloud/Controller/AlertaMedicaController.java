@@ -4,11 +4,14 @@ import proyecto.back_duoc_cloud.Model.AlertaMedica;
 import proyecto.back_duoc_cloud.Service.AlertaMedicaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/alertas")
+@CrossOrigin(origins = "http://localhost:4200") // Permite solicitudes desde el frontend
 public class AlertaMedicaController {
     private final AlertaMedicaService service;
 
