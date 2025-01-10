@@ -8,7 +8,7 @@
 		<version>3.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.duoc.cloud</groupId>
+	<groupId>proyecto</groupId>
 	<artifactId>back-duoc-cloud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>back-duoc-cloud</name>
