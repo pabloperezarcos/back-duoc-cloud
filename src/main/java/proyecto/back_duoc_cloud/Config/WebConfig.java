@@ -18,8 +18,8 @@ public class WebConfig {
                         // Permitir solicitudes desde el frontend
                         .allowedOrigins("*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
-                        .allowedHeaders("*") // Permitir todas las cabeceras
-                        .allowCredentials(true); // Permitir cookies o credenciales
+                        .allowedHeaders("*"); // Permitir todas las cabeceras
+                        //.allowCredentials(true); // Permitir cookies o credenciales
             }
         };
     }
