@@ -13,7 +13,10 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Permitir todas las rutas
-                        .allowedOrigins("http://localhost:4200") // Permitir solicitudes desde el frontend
+                        // Permitir solicitudes desde el frontend
+                        // .allowedOrigins("http://localhost:4200")
+                        // Permitir solicitudes desde el frontend
+                        .allowedOrigins("https://www.carnesag.cl/duoc/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
                         .allowedHeaders("*") // Permitir todas las cabeceras
                         .allowCredentials(true); // Permitir cookies o credenciales
