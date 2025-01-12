@@ -16,7 +16,7 @@ public class WebConfig {
                         // Permitir solicitudes desde el frontend
                         // .allowedOrigins("http://localhost:4200")
                         // Permitir solicitudes desde el frontend
-                        .allowedOrigins("https://www.carnesag.cl/duoc/")
+                        .allowedOrigins("https://www.carnesag.cl")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
                         .allowedHeaders("*") // Permitir todas las cabeceras
                         .allowCredentials(true); // Permitir cookies o credenciales
