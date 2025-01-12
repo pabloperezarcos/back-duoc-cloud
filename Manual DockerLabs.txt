@@ -1,0 +1,13 @@
+1.- En VS Code aplicar 'mvn clean package' 
+para la construcción del aplicativo y generar el .jar
+
+2.- En DockerPlayground aplicar un git clone con el comando:
+'git clone https://github.com/pabloperezarcos/back-duoc-cloud.git'
+
+3.- Navegar al directorio del proyecto aplicado 'cd back-duoc-cloud/'
+
+4.- Construir la imagen para docker con: 'docker build -t back-duoc-cloud .'
+
+5.- Lanzar la aplicación con el comando: 
+'docker run -p 8080:8080 back-duoc-cloud'
+
