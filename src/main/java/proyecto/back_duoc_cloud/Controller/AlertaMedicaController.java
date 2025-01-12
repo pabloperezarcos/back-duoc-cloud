@@ -13,7 +13,8 @@ import java.util.List;
 @RequestMapping("/api/alertas")
 // Permite solicitudes desde el frontend
 // @CrossOrigin(origins = "http://localhost:4200")
-@CrossOrigin(origins = "https://www.carnesag.cl")
+// @CrossOrigin(origins = "https://www.carnesag.cl")
+@CrossOrigin(origins = "*")
 public class AlertaMedicaController {
     private final AlertaMedicaService service;
 
