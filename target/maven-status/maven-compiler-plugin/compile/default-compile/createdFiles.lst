@@ -1,9 +1,9 @@
 proyecto\back_duoc_cloud\Controller\AlertaMedicaController.class
-proyecto\back_duoc_cloud\Repository\AlertaMedicaRepository.class
-proyecto\back_duoc_cloud\Service\AlertaMedicaServiceImpl.class
 proyecto\back_duoc_cloud\Config\WebConfig$1.class
 proyecto\back_duoc_cloud\Service\AlertaMedicaService.class
 proyecto\back_duoc_cloud\Model\AlertaMedica.class
 proyecto\back_duoc_cloud\Config\SecurityConfig.class
 proyecto\back_duoc_cloud\BackDuocCloudApplication.class
 proyecto\back_duoc_cloud\Config\WebConfig.class
+proyecto\back_duoc_cloud\Repository\AlertaMedicaRepository.class
+proyecto\back_duoc_cloud\Service\AlertaMedicaServiceImpl.class
