@@ -11,7 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/alertas")
-@CrossOrigin(origins = "http://localhost:4200") // Permite solicitudes desde el frontend
+// Permite solicitudes desde el frontend
+// @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://www.carnesag.cl/duoc/")
 public class AlertaMedicaController {
     private final AlertaMedicaService service;
 
