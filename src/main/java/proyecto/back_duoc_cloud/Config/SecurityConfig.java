@@ -19,8 +19,8 @@ public class SecurityConfig {
                         .requestMatchers("/", "/api/alertas/**").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated())
-                // .httpBasic(httpBasic -> { }); // Configuración para autenticación básica
-                .httpBasic(httpBasic -> httpBasic.disable());
+                 .httpBasic(httpBasic -> { }); // Configuración para autenticación básica
+                // .httpBasic(httpBasic -> httpBasic.disable());
 
         return http.build();
     }
