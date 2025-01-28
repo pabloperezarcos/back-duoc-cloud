@@ -1,4 +1,4 @@
-version: "3.8"
+#version: "3.8"
 services:
   back-duoc-cloud:
     image: pabloperezarcos/back-duoc-cloud:latest
@@ -10,9 +10,22 @@ services:
       - "8080:8080"
     environment:
       # Variables de entorno para Oracle DB
-      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@(description=(retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-valparaiso-1.oraclecloud.com))(connect_data=(service_name=g270934143bd614_backduoccloud_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.sa-valparaiso-1.oraclecloud.com, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
+      #SPRING_DATASOURCE_URL: jdbc:oracle:thin:@(description=(retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.sa-valparaiso-1.oraclecloud.com))(connect_data=(service_name=g270934143bd614_backduoccloud_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.sa-valparaiso-1.oraclecloud.com, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@backduoccloud_high?TNS_ADMIN=/app/wallet
       SPRING_DATASOURCE_USERNAME: ADMIN
       SPRING_DATASOURCE_PASSWORD: Secure1Password2Example
       SPRING_JPA_HIBERNATE_DDL_AUTO: none
       SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.OracleDialect
     restart: always
+    depends_on: # Para garantizar que RabbitMQ se inicie antes que el backend.
+      - rabbitmq
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672" # Puerto para conexiones de RabbitMQ
+      - "15672:15672" # Puerto para la interfaz de administración de RabbitMQ
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
