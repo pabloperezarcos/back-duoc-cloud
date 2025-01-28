@@ -35,6 +35,8 @@ public class AlertaMedicaController {
     // POST: Crear una nueva alerta
     @PostMapping
     public ResponseEntity<String> crearAlerta(@RequestBody AlertaMedica alerta) {
+        System.out.println("Nivel de alerta recibida: " + alerta.getNivelAlerta());
+
         // Guardar siempre en la base de datos
         service.guardarAlerta(alerta);
 
