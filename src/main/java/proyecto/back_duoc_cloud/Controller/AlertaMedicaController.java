@@ -40,7 +40,7 @@ public class AlertaMedicaController {
         System.out.println("Nivel de alerta recibida: " + alerta.getNivelAlerta());
 
         // Guardar siempre en la base de datos
-        //service.guardarAlerta(alerta);
+        // service.guardarAlerta(alerta);
 
         // Enviar la alerta a la cola adecuada según su nivel
         if ("Alta".equalsIgnoreCase(alerta.getNivelAlerta())) {
