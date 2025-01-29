@@ -13,7 +13,7 @@ COPY ${JAR_FILE} app.jar
 # Copia el wallet al contenedor
 COPY src/main/resources/wallet /app/wallet
 
-# Expone el puerto 8080 (o el que use tu aplicación)
+# Expone el puerto 8080
 EXPOSE 8080
 
 # Comando para ejecutar la aplicación
