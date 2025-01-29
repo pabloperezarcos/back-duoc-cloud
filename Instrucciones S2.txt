@@ -1,0 +1,51 @@
+Generación de alertas desde el Frontend:
+        Tu aplicación en Angular genera alertas médicas aleatorias y las envía a 
+        través de un Service HTTP al Backend 1 (utilizando un POST).
+
+Procesamiento inicial en el Backend 1:
+        El Backend 1 recibe estas alertas generadas.
+        Guarda todas las alertas en la tabla principal alertas_medicas en la base 
+        de datos Oracle Cloud.
+        Si el nivel de alerta es "alto" (u otra condición que determines como "anómala"):
+            
+        Envía esa alerta a RabbitMQ para que sea procesada por los microservicios 
+        onsumidores.
+
+Procesamiento de alertas anómalas en RabbitMQ:
+        RabbitMQ recibe las alertas enviadas por el Backend 1 y las distribuye a 
+        los microservicios consumidores.
+
+Backend 2:
+        El Backend 2, como microservicio consumidor, tiene dos funciones principales:
+            Guardar alertas anómalas: Recibe las alertas desde RabbitMQ y las guarda 
+            en otra tabla específica (por ejemplo, alertas_graves) para un manejo 
+            diferenciado.
+            Generar archivos JSON: Crea archivos JSON con los detalles de cada 
+            alerta anómala y los guarda en una ruta predefinida en el sistema de 
+            archivos (servidor o contenedor).
+
+Consulta de archivos JSON desde el Frontend:
+        Tu Frontend debe permitir que los usuarios (personal médico, por ejemplo) 
+        puedan consultar estos archivos JSON.
+        El Backend 2 deberá proporcionar un endpoint RESTful que permita devolver 
+        la lista de archivos generados y/o su contenido para que el Frontend pueda 
+        mostrarlos.
+
+Recomendaciones y consideraciones:
+
+    Validación en el Frontend:
+        Asegúrate de que las alertas sean enviadas correctamente al Backend 1 y que 
+        cumplan con el formato esperado.
+
+    Gestión de RabbitMQ:
+        Configura colas, intercambios y claves de enrutamiento para que el flujo de 
+        las alertas anómalas sea claro y robusto.
+
+    Estructura de archivos JSON:
+        Define un esquema claro para los archivos JSON generados, para que sean fáciles 
+        de consumir en el Frontend.
+
+    Endpoints en el Backend 2:
+        Crea un endpoint para listar los archivos JSON generados.
+        Si es necesario, otro endpoint para devolver el contenido de un archivo
+        específico.

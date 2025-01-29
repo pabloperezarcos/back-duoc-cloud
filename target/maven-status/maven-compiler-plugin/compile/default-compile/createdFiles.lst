@@ -7,3 +7,4 @@ proyecto\back_duoc_cloud\BackDuocCloudApplication.class
 proyecto\back_duoc_cloud\Config\WebConfig.class
 proyecto\back_duoc_cloud\Repository\AlertaMedicaRepository.class
 proyecto\back_duoc_cloud\Service\AlertaMedicaServiceImpl.class
+proyecto\back_duoc_cloud\Config\RabbitMQConfig.class
