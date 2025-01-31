@@ -13,9 +13,15 @@ services:
       SPRING_DATASOURCE_PASSWORD: Secure1Password2Example
       SPRING_JPA_HIBERNATE_DDL_AUTO: none
       SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.OracleDialect
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: guest
+      SPRING_RABBITMQ_PASSWORD: guest
     restart: always
     depends_on:
       - rabbitmq
+    networks:
+      - sumativa_duoc
 
   rabbitmq:
     image: rabbitmq:management
@@ -26,9 +32,9 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - sumativa_duoc
 
-volumes:
-  rabbitmq_data:
-    driver: local
+networks:
+  sumativa_duoc:
+    external: true

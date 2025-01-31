@@ -1,8 +1,11 @@
 package proyecto.back_duoc_cloud.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data; //Con Lombok no es necesario escribir los Get y Set
-import java.time.LocalDateTime;
+
+import java.time.Instant;
+//import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "alertas_medicas")
@@ -22,6 +25,6 @@ public class AlertaMedica {
     private String nivelAlerta;
 
     @Column(nullable = false)
-    private LocalDateTime fechaAlerta = LocalDateTime.now();
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone = "UTC")
+    private Instant fechaAlerta = Instant.now();
 }
-
