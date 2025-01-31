@@ -58,6 +58,32 @@ public class RabbitMQConfig {
     }
 
     // Configuración común: Conversor Jackson para serialización/deserialización
+    /*
+     * @Bean
+     * public Jackson2JsonMessageConverter jacksonConverter() {
+     * return new Jackson2JsonMessageConverter();
+     * }
+     * 
+     * @Bean
+     * public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory,
+     * Jackson2JsonMessageConverter jacksonConverter) {
+     * RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
+     * rabbitTemplate.setMessageConverter(jacksonConverter);
+     * return rabbitTemplate;
+     * }
+     * 
+     * @Bean
+     * public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(
+     * ConnectionFactory connectionFactory,
+     * Jackson2JsonMessageConverter jacksonConverter) {
+     * SimpleRabbitListenerContainerFactory factory = new
+     * SimpleRabbitListenerContainerFactory();
+     * factory.setConnectionFactory(connectionFactory);
+     * factory.setMessageConverter(jacksonConverter);
+     * return factory;
+     * }
+     */
+    // Conversor Jackson para serialización/deserialización de JSON
     @Bean
     public Jackson2JsonMessageConverter jacksonConverter() {
         return new Jackson2JsonMessageConverter();
