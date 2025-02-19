@@ -14,13 +14,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
-              /*   .cors(cors -> cors.configurationSource(request -> {
-                    CorsConfiguration config = new CorsConfiguration();
-                    config.addAllowedOrigin("*"); // Permitir todos los orígenes
-                    config.addAllowedHeader("*"); // Permitir todos los encabezados
-                    config.addAllowedMethod("*"); // Permitir todos los métodos HTTP
-                    return config;
-                })) */
+                /*
+                 * .cors(cors -> cors.configurationSource(request -> {
+                 * CorsConfiguration config = new CorsConfiguration();
+                 * config.addAllowedOrigin("*"); // Permitir todos los orígenes
+                 * config.addAllowedHeader("*"); // Permitir todos los encabezados
+                 * config.addAllowedMethod("*"); // Permitir todos los métodos HTTP
+                 * return config;
+                 * }))
+                 */
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/", "/api/alertas/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/**").permitAll()

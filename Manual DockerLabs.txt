@@ -2,12 +2,18 @@
 para la construcción del aplicativo y generar el .jar
 
 2.- En DockerPlayground aplicar un git clone con el comando:
-'git clone https://github.com/pabloperezarcos/back-duoc-cloud.git'
+    git clone https://github.com/pabloperezarcos/back-duoc-cloud.git
+    git clone https://github.com/pabloperezarcos/back_duoc_consumer.git
+    git clone https://github.com/pabloperezarcos/back-duoc-json-writer.git
 
 3.- Navegar al directorio del proyecto aplicado 'cd back-duoc-cloud/'
 
-4.- Construir la imagen para docker con: 'docker build -t back-duoc-cloud .'
+4.- Construir la imagen para docker con: docker build -t back-duoc-cloud .
+4.- Construir la imagen para docker con: docker build -t back_duoc_consumer .
+4.- Construir la imagen para docker con: docker build -t back-duoc-json-writer .
 
 5.- Lanzar la aplicación con el comando: 
-'docker run -p 8080:8080 back-duoc-cloud'
+    docker run -d -p 8080:8080 back-duoc-cloud
+    docker run -d -p 8081:8080 back_duoc_consumer
+    docker run -d -p 8082:8080 back-duoc-json-writer
 
