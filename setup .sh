@@ -24,3 +24,8 @@ docker run -d --name back-duoc-json-writer --network sumativa_duoc -p 8082:8080 
 
 echo "Todos los servicios han sido iniciados correctamente."
 echo "Puedes acceder a RabbitMQ en http://localhost:15672 (usuario: guest, contraseña: guest)"
+
+# chmod +x root   dar permisos
+# ./root   ejecutar
+# en caso de SOS, ejecutar la siguiente linea para integrar un MS a la red
+# docker run -d --network sumativa_duoc --name nombre_microservicio -p 8081:8080 nombre_microservicio
