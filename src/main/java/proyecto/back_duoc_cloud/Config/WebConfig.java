@@ -19,7 +19,7 @@ public class WebConfig {
                         .allowedOrigins("*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
                         .allowedHeaders("*"); // Permitir todas las cabeceras
-                        //.allowCredentials(true); // Permitir cookies o credenciales
+                // .allowCredentials(true); // Permitir cookies o credenciales
             }
         };
     }
